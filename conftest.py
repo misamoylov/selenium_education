@@ -5,7 +5,7 @@ import pytest
 from selenium import webdriver
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def driver(request):
     if platform.system() == 'Linux':
         wd = webdriver.Firefox()
