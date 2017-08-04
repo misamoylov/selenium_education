@@ -2,7 +2,7 @@ import pytest
 
 
 @pytest.mark.usefixtures("login_on_admin_page")
-@pytest.mark.test_login
+@pytest.mark.test_click_all_elements_on_admin_page
 def test_click_all_elements_on_admin_page(driver):
     driver.implicitly_wait(15)
     els = [el.text for el in driver.find_elements_by_class_name("name")]
@@ -14,3 +14,10 @@ def test_click_all_elements_on_admin_page(driver):
             for sub_el in sub_els:
                 driver.find_element_by_link_text(sub_el).click()
                 assert driver.find_element_by_tag_name('h1')
+
+
+
+
+
+
+
